@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StateService } from './state.service';
 
-const API_URL = "https://comoleermicartaastral.com/";
+const API_URL = "http://localhost:8888/new-api/";
 
 @Injectable({
   providedIn: 'root'
