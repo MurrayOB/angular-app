@@ -1,0 +1,42 @@
+<div class="page-container">
+    <div class="mx-auto text-center col-12 pt-5 pb-5">
+        <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <div class="form-group col-lg-4 mx-auto">
+                <h3>Register an Account</h3><br>
+                
+                <!-- User Name Field -->
+                <label for="name" hidden>Name</label>
+                <input [(ngModel)]="user.name" #name="ngModel" type="text" class="form-control" placeholder="Name" id="name" name="name" required>
+                <!-- Error Msg -->
+                <small *ngIf="!name.pristine && !name.valid">Please enter your Name</small>
+
+                <!-- User Email Field -->
+                <label for="email" hidden>Email</label>
+                <input [(ngModel)]="user.email" #email="ngModel" type="text" class="form-control mt-3" placeholder="Email" id="email" name="email" [pattern]="patternEmail" required>
+                <!-- Error Msg -->
+                <small *ngIf="email.errors?.pattern">
+                    Invalid email address
+                </small>
+
+                <!-- User Password Field -->
+                <label for="name" hidden>Password</label>
+                <input [(ngModel)]="user.password" #password="ngModel" type="password" class="form-control mt-3" placeholder="Password" id="password" name="password" required  minlength="8">
+                <!-- Error Msg -->
+                <small *ngIf="password.errors?.minlength">
+                    Name must be at least 5 characters long.
+                </small>
+
+                <!-- User Role Field -->
+                <label for="role" hidden>Role</label>
+                <select [(ngModel)]="user.role" #role="ngModel" class="form-control mt-3" id="role" name="role" required>
+                    <option *ngFor="let role of [defaultStr].concat(roles)" [ngValue]="role === defaultStr ? null : role">{{role}}</option>
+                </select>
+
+                <button type="submit" class="btn btn-danger mt-4" [disabled]="registerForm.invalid">Register</button>
+            </div>
+        </form>
+        <p style="color: rgb(255, 75, 75);">{{ result }}</p>
+    </div>
+</div>
+  
+

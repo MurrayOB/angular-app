@@ -1,0 +1,40 @@
+<footer class="footer">
+    <div class="col-lg-10 mx-auto">
+        <hr>
+        <br>
+        <div class="row mx-lg-auto">
+            <div class="col-lg-4">
+                <div class="col-lg-10 pl-lg-5">
+                    <h5>The Warehouse <br>Company</h5>
+                    <p>2011 - 2021</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="col-lg-10">
+                    <div>
+                        <h5>About Us</h5>
+                        <p>We're the warehouse company</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="col-lg-10">
+                    <div>
+                        <!-- Interpolation -->
+                        <h5>Find Us Here:</h5>
+                        <p *ngFor="let item of items">{{ item }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="col-lg-12 mx-auto text-center">
+        <p>{{time}}</p>
+        <p>&#169;2021 Warehouse Company</p>
+    </div>
+    <br>
+</footer>

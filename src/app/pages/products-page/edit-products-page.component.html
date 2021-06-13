@@ -1,0 +1,55 @@
+<div class="page-container">
+    <br>
+        <div class="pl-lg-3">
+            <div class="col-6 ">
+                <h4>Add Product</h4>
+                
+            </div>
+                <div class="col-12 pl-0">
+                    <form (ngSubmit)="onSubmit(); addProductForm.resetForm(); " #addProductForm="ngForm">
+                        <div class="form-group col-lg-4 col-sm-12">
+                            <hr>
+                            <strong>Fill in Name, Category and Quantity</strong>
+                            <br><br>
+                            
+                            <!-- Name of Product -->
+                            <label for="name" hidden></label>
+                            <input [(ngModel)]="product.name" #productName="ngModel" type="text" id="name" name="name" class="form-control" placeholder="Product Name" required>
+                            <!-- Error Message -->
+                            <small *ngIf="!productName.pristine && !productName.valid">Please Enter The Product's Name</small>
+                            
+                            <!-- Category of Product -->
+                            <select [(ngModel)]="product.category" #category="ngModel" class="form-control mt-3" name="categories" id="categories" required>
+                                <option *ngFor="let category of [defaultStr].concat(categories)" [ngValue]="category === defaultStr ? null : category">{{ category }}</option>
+                            </select>
+                            <!-- Error Message -->
+                            <small *ngIf="!category.pristine && !category.valid">Please Select A Product Category</small>
+                            
+                            <!-- Quantity of Product -->
+                            <label for="quantity" hidden></label>
+                            <input [(ngModel)]="product.quantity" #quantity="ngModel" type="number" class="form-control mt-3" id="quantity" name="quantity" placeholder="Type Quantity - Max 100" min="1" max="100" required>
+                            <!-- Error Message -->
+                            <small *ngIf="!category.pristine && !category.valid ">Please Enter A Number From 1 - 100 <br></small>
+                            <button type="submit" id="addProduct" class="btn btn-primary mt-4" [disabled]="addProductForm.invalid">Add Product <i class="uil uil-plus"></i></button>
+                        </div>
+                    </form>
+
+                     <!-- Success Alert -->
+                     <div class="col-lg-4 col-sm-12">
+                        <div #alert class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                            <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                                Product Has Been <strong>Added</strong>
+                        </div>
+                     </div>
+                     
+                    <div class="pl-3">
+                        <!-- <p style="color: royalblue;"> {{ successMessage }}</p> -->
+                        <p style="color: rgb(255, 81, 81);">{{ errorMessage }}</p>
+                    </div>
+                </div>
+            <br>
+        </div>
+</div>
+    

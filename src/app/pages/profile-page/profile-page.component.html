@@ -1,0 +1,37 @@
+<div class="page-container">
+    <br>
+    <div class="pl-lg-3">
+        <div class="col-6 ">
+            <h4>Username</h4>
+            <p>{{ user.name }}</p>
+            <h4>Email</h4>
+            <p>{{ user.email }}</p>
+        </div>
+        <div class="col-12 pl-0">
+            <form (ngSubmit)="onSubmit()" #changeUserDetailsForm="ngForm">
+                <div class="form-group col-lg-4 col-sm-12">
+                    <hr>
+                    <strong>Change Username or Email below</strong>
+                    <br><br>
+                    <label for="name" hidden></label>
+                    <input [(ngModel)]="user.name" type="text" id="name" name="name" class="form-control" placeholder="Username">
+                    <br>
+                    <label for="email" hidden></label>
+                    <input [(ngModel)]="user.email" type="text" class="form-control" id="email" name="email" placeholder="Email">
+                    <button type="submit" id="changeBtn" class="btn btn-info mt-4">Change Details</button>
+                </div>
+            </form>
+
+            <p *ngFor="let alert of alerts" class="pl-4 pr-3">
+                <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+            </p>
+              
+            <div class="pl-3">
+                <p style="color: royalblue;"> {{ successMessage }}</p>
+                <p style="color: rgb(255, 81, 81);">{{ errorMessage }}</p>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+

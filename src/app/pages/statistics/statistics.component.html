@@ -1,0 +1,31 @@
+<div class="page-container">
+    <div class="col-lg-11 ml-lg-5 ml-sm-2 mt-3">
+        <h4>Statistics </h4>
+        <span>
+            <p class="d-inline">Clothes <i class="uil uil-horizontal-align-left" style="color: rgba(134, 174, 247, 0.8);"></i> </p>
+            <p  class="d-inline"> Household <i class="uil uil-horizontal-align-left" style="color: rgba(101, 214, 105, 0.8);"></i></p>
+            <p  class="d-inline"> Medicine <i class="uil uil-horizontal-align-left" style="color: rgba(240, 112, 103, 0.8);"></i></p>
+            <p  class="d-inline"> Food <i class="uil uil-horizontal-align-left" style="color: rgba(255, 174, 74, 0.6);"></i></p>
+        </span>
+        <hr>
+        <div>
+            <div style="display: block;">
+                <canvas
+                baseChart
+                [chartType]="'horizontalBar'"
+                [datasets]="chartData"
+                [labels]="labels"
+                [options]="chartOptions"
+                [legend]="false"
+                [colors]="colors">
+            </canvas>
+            <br>
+            <div class="text-center">
+                <p>Quantity</p>
+            </div>
+            <br>
+            </div>
+          </div>
+    </div>
+</div>  
+

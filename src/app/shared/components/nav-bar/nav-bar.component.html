@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="#">Warehouse <i class="uil uil-browser"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <ul class="navbar-nav mr-auto">
+          <div *ngIf="loggedIn">
+            <li class="nav-item">
+              <div class="d-lg-inline d-sm-block text-right">
+                <a routerLink="/dashboard-page" class="btn my-2 my-sm-0 mr-2" type="submit">Dashboard <i class="uil uil-apps"></i></a>
+              </div>
+              <div *ngIf="role == 'Admin' " class="d-lg-inline d-sm-block text-right">
+                <a routerLink="/statistics-page" class="btn my-2 my-sm-0 mr-2" type="submit">Statistics <i class="uil uil-graph-bar"></i></a>
+              </div>
+            </li>
+          </div>
+      </ul>
+      
+        <div *ngIf="loggedIn">
+          <div class="d-lg-inline d-sm-block text-right">
+            <a routerLink="/edit-products-page" class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Add Product <i class="uil uil-plus"></i></a>
+          </div>
+          <div class="d-lg-inline d-sm-block mx-sm-auto text-right">
+            <a routerLink="/profile-page" class="btn btn-outline-info my-2 my-sm-0 mr-2" type="submit">Edit {{ role }} Profile <i class="uil uil-setting"></i></a>
+          </div>  
+          
+          <div class="d-lg-inline d-sm-block text-right">
+            <a routerLink="/profile-page" class="btn btn-link my-2 my-sm-0 mr-2">{{ name }} <i class="uil uil-user"></i></a>
+          </div> 
+          
+          <div class="d-lg-inline d-sm-block text-right">
+            <a (click)="logOut()" class="btn btn-outline-primary my-2 my-sm-0 mr-2" type="submit">Logout <i class="uil uil-signout"></i></a>
+          </div>
+        </div>
+
+        <div *ngIf="!loggedIn">
+          <a routerLink="/login-page" class="btn btn-outline-primary my-2 my-sm-0 mr-2" type="submit">Login</a>
+            <a routerLink="/register-page" routerLinkActive="active" class="btn btn-outline-danger my-2 my-sm-0">Register</a>
+        </div>
+
+        
+    </div>
+  </nav>
