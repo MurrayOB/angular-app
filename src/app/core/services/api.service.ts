@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StateService } from './state.service';
 
-const API_URL = "http://localhost:8888/new-api/";
+const API_URL = "";
 
 @Injectable({
   providedIn: 'root'
@@ -27,9 +27,7 @@ export class ApiService {
 
   //Set Local Storage Function
   setLocalStorageItem(name : string, item: any){
-    localStorage.setItem(name, JSON.parse(
-      JSON.stringify(item))
-    );
+    localStorage.setItem(name, item); 
   }
 
   //Get Local Storage Function
