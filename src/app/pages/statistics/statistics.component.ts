@@ -38,17 +38,22 @@ export class StatisticsComponent implements OnInit {
       ]
     }]; 
   
-  allProducts : any = []; 
+  allProducts : any = [
+    {id: 1, name: 'Example', category: 'Food', quantity: 100}, 
+    {id: 34, name: 'Another Example', category: 'Clothes', quantity: 90}, 
+    {id: 20, name: 'Another Example', category: 'Medicine', quantity: 110}, 
+    {id: 10, name: 'Another Example', category: 'Household', quantity: 120}, 
+  ]; 
 
   ngOnInit(): void {
     //Subscribe to Products
-    this.stateService.allProducts$.subscribe((products : any) => {
-      this.allProducts = products; 
+    // this.stateService.allProducts$.subscribe((products : any) => {
+    //   this.allProducts = products; 
 
-      if(!this.allProducts.length){
-        this.allProducts = JSON.parse(localStorage.getItem('products')!); 
-      }
-    }); 
+    //   if(!this.allProducts.length){
+    //     this.allProducts = JSON.parse(localStorage.getItem('products')!); 
+    //   }
+    // }); 
 
     this.getQuantities(this.allProducts); 
   

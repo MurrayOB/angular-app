@@ -29,8 +29,13 @@ export class DashboardPageComponent implements OnInit {
     token : '', 
   }
 
-  allProducts : any = []; 
-  columns : any = []; 
+  allProducts : any = [
+    {id: 1, name: 'Example', category: 'Food', quantity: 100}, 
+    {id: 34, name: 'Another Example', category: 'Clothes', quantity: 50}, 
+    {id: 20, name: 'Another Example', category: 'Medicine', quantity: 110}, 
+    {id: 10, name: 'Another Example', category: 'Household', quantity: 120},
+  ]; 
+  columns : any = ["name", "category", "quantity"]; 
 
   ngOnInit(): void {
     //Subscribe to User Role
@@ -38,26 +43,26 @@ export class DashboardPageComponent implements OnInit {
       this.role = user.role || localStorage.getItem('role'); 
     }); 
     
-    //Set Token
-    this.product.token = this.apiService.getLocalStorageItem('token'); 
+    // //Set Token
+    // this.product.token = this.apiService.getLocalStorageItem('token'); 
 
-    //Subscribe to Products
-    this.stateService.allProducts$.subscribe((products : any) => {
-      this.allProducts = products; 
+    // //Subscribe to Products
+    // this.stateService.allProducts$.subscribe((products : any) => {
+    //   this.allProducts = products; 
 
-      if(!this.allProducts.length){
-        this.allProducts = JSON.parse(localStorage.getItem('products')!); 
-      }
-    }); 
+    //   if(!this.allProducts.length){
+    //     this.allProducts = JSON.parse(localStorage.getItem('products')!); 
+    //   }
+    // }); 
 
-    //Subscribe to Columns
-    this.stateService.columns$.subscribe((columns : any) => {
-      this.columns = columns; 
+    // //Subscribe to Columns
+    // this.stateService.columns$.subscribe((columns : any) => {
+    //   this.columns = columns; 
       
-      if(!this.columns.length){
-        this.columns = JSON.parse(localStorage.getItem('columns')!); 
-      }
-    }); 
+    //   if(!this.columns.length){
+    //     this.columns = JSON.parse(localStorage.getItem('columns')!); 
+    //   }
+    // }); 
 
   }
 

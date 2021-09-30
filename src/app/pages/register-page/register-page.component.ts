@@ -20,9 +20,9 @@ export class RegisterPageComponent implements OnInit {
   constructor(private apiService : ApiService, private stateService: StateService, private router:Router) { }
    
   user: User = {
-    name: '', 
-    email: '', 
-    password: '',
+    name: 'tryme', 
+    email: 'example@gmail.com', 
+    password: 'Password123',
     role: null, 
   }; 
 
