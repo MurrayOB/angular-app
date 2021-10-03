@@ -38,7 +38,7 @@ export class LoginPageComponent implements OnInit {
         name: "user123-example",
         email: "example@gmail.com",
         password: "Password123",
-        role: "admin",
+        role: "Admin",
       };
 
       this.stateService.setUser(user);
