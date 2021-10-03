@@ -26,6 +26,7 @@ import { StateService } from './core/services/state.service';
 import { ChartsModule } from 'ng2-charts';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ProfilePageComponent,
     EditProductsPageComponent,
     StatisticsComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,

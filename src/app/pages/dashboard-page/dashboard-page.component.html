@@ -1,46 +1,77 @@
 <div class="page-container">
-    <div class="col-lg-11 ml-lg-5 ml-sm-2 mt-3">
-        <p style="color: tomato;">{{ errorMsg }}</p>
-        <h4>Dashboard </h4>
-        <h6>User Role:  {{ role }} </h6>
-        <hr>
-        <div class="table-section">
-            <!-- Remove Alert -->          
+  <div class="col-lg-11 ml-lg-5 ml-sm-2 mt-3">
+    <p>
+      <strong>Delete</strong> products as you please :) For demonstration
+      purposes, the database <strong>will not</strong> be effected
+    </p>
+    <p style="color: tomato">{{ errorMsg }}</p>
+    <h4>Dashboard</h4>
+    <h6>User Role: {{ role }}</h6>
+    <hr />
+    <div class="table-section">
+      <!-- Remove Alert -->
 
-            <table style="width:99%">
-                <!-- Columns -->
-                <tr>
-                    <th *ngIf="errorMsg == '' ">#</th>
-                    <th *ngFor="let column of columns">
-                        {{ capitalize(column) }}
-                    </th>
-                    <th *ngIf="role == 'Admin' && errorMsg == ''">Remove</th>
-                </tr>
-  
-                 <!-- Products -->
-                <tr *ngFor="let product of allProducts; let i = index" [attr.id]="product.id">
-                    <td class="numbers"><strong>{{ i + 1 }}.</strong></td>
-                    <td *ngFor="let column of columns">
-                        {{product[column]}}
-                    </td>
-                    <td *ngIf="role == 'Admin' ">
-                        <button type="submit" (click)="removeProduct(product.id)" class="btn btn-outline-danger"><i class="uil uil-trash-alt"></i></button>
-                    </td>
-                </tr>
-                
-            </table>
-        </div>
-    </div>
+      <table style="width: 99%">
+        <!-- Columns -->
+        <tr>
+          <th *ngIf="errorMsg == ''">#</th>
+          <th *ngFor="let column of columns">
+            {{ capitalize(column) }}
+          </th>
+          <th *ngIf="role == 'Admin' && errorMsg == ''">Remove</th>
+        </tr>
 
-    <div class="absoluteAlert mx-auto text-center col-lg-12 col-sm-12 pl-lg-5 pr-lg-5 pl-3 pr-3">
-        <div #alert class="alert alert-danger alert-dismissible fade show d-none" role="alert">
-            <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
-                <span aria-hidden="true">&times;</span>
+        <!-- Products -->
+        <tr
+          *ngFor="let product of allProducts; let i = index"
+          [attr.id]="product.id"
+        >
+          <td class="numbers">
+            <strong>{{ i + 1 }}.</strong>
+          </td>
+          <td *ngFor="let column of columns">
+            {{ product[column] }}
+          </td>
+          <td *ngIf="role == 'Admin'">
+            <button
+              type="submit"
+              (click)="removeProduct(product.id)"
+              class="btn btn-outline-danger"
+            >
+              <i class="uil uil-trash-alt"></i>
             </button>
-                Product Has Been <strong>Removed</strong>
-        </div>
+          </td>
+        </tr>
+      </table>
     </div>
+  </div>
 
+  <div
+    class="
+      absoluteAlert
+      mx-auto
+      text-center
+      col-lg-12 col-sm-12
+      pl-lg-5
+      pr-lg-5
+      pl-3
+      pr-3
+    "
+  >
+    <div
+      #alert
+      class="alert alert-danger alert-dismissible fade show d-none"
+      role="alert"
+    >
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="closeAlert()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      Product Has Been <strong>Removed</strong>
+    </div>
+  </div>
 </div>
-
-  
