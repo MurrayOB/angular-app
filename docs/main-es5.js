@@ -392,7 +392,7 @@
                 name: "user123-example",
                 email: "example@gmail.com",
                 password: "Password123",
-                role: "admin"
+                role: "Admin"
               };
               this.stateService.setUser(user); //Setting LocalStorage Items
               //This would be updated with setUser(user)
@@ -3776,7 +3776,9 @@
         type: AppRoutingModule
       });
       AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({
-        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
+        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes, {
+          useHash: true
+        })], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
       });
 
       (function () {

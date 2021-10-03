@@ -5,3 +5,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### App built by Murray O'Brien for demonstrative purposes
 
 Angular TS, Chart.js, Bootstrap, Unicons
+
+### ng build --output-path=docs --base-href="https://murrayobrien.github.io/angular-app/"
