@@ -499,7 +499,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
-      /*! /Users/Admin/Developer/JS/warehouse-app/warehouse/node_modules/@angular-devkit/build-angular/src/webpack/es5-polyfills.js */
+      /*! /Users/Admin/Developer/portfolio-projects/warehouse-app/warehouse/node_modules/@angular-devkit/build-angular/src/webpack/es5-polyfills.js */
       "voQr");
 
       __webpack_require__(
@@ -507,7 +507,7 @@
       "R0gw");
 
       module.exports = __webpack_require__(
-      /*! /Users/Admin/Developer/JS/warehouse-app/warehouse/src/polyfills.ts */
+      /*! /Users/Admin/Developer/portfolio-projects/warehouse-app/warehouse/src/polyfills.ts */
       "hN/g");
       /***/
     },
