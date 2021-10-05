@@ -71,6 +71,7 @@ export class EditProductsPageComponent implements OnInit {
   }
 
   onSubmit() {
+    //Fake Environment
     if (!environment.production) {
       const oldProduct = this.product;
 
@@ -81,8 +82,7 @@ export class EditProductsPageComponent implements OnInit {
         quantity: oldProduct.quantity,
       };
 
-      this.allProducts.push(newProduct);
-      console.log(this.allProducts);
+      this.allProducts.unshift(newProduct);
 
       this.stateService.allProducts$.next(this.allProducts);
       localStorage.setItem("products", JSON.stringify(this.allProducts));

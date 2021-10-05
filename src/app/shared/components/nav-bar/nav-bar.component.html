@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <a class="navbar-brand" href="#">Warehouse <i class="uil uil-browser"></i></a>
+  <a class="navbar-brand links" href="#">APP <i class="uil uil-browser"></i></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -19,7 +19,7 @@
           <div class="d-lg-inline d-sm-block text-right">
             <a
               routerLink="/dashboard-page"
-              class="btn my-2 my-sm-0 mr-2"
+              class="btn my-2 my-sm-0 mr-2 links"
               type="submit"
               >Dashboard <i class="uil uil-apps"></i
             ></a>
@@ -30,7 +30,7 @@
           >
             <a
               routerLink="/statistics-page"
-              class="btn my-2 my-sm-0 mr-2"
+              class="btn my-2 my-sm-0 mr-2 links"
               type="submit"
               >Statistics <i class="uil uil-graph-bar"></i
             ></a>
@@ -41,10 +41,20 @@
         <div class="d-lg-inline d-sm-block text-right">
           <a
             routerLink="/about-page"
-            class="btn my-2 my-sm-0 mr-2"
+            class="btn my-2 my-sm-0 mr-2 links"
             type="submit"
             >About <i class="uil uil-info-circle"></i
           ></a>
+        </div>
+      </li>
+      <li class="nav-item" (click)="toggleTheme()">
+        <div class="d-lg-inline d-sm-block text-right">
+          <a *ngIf="theme == light" class="btn my-2 my-sm-0 mr-2 links">
+            Dark Mode <i class="uil uil-moon"></i>
+          </a>
+          <a *ngIf="theme == dark" class="btn my-2 my-sm-0 mr-2 links">
+            Light Mode <i class="uil uil-sun"></i>
+          </a>
         </div>
       </li>
     </ul>

@@ -1,11 +1,15 @@
-.counter{
-    color: green;
+.counter {
+  color: green;
 }
 
-.navbar-brand:hover{
-    color: #607fd3;
+.navbar-brand:hover {
+  color: #607fd3;
 }
 
-.nav-item a:hover{
-    color: rgb(126, 126, 126);
+.nav-item a:hover {
+  color: rgb(126, 126, 126);
+}
+
+.links {
+  color: var(--p);
 }

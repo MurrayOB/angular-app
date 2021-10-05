@@ -1,0 +1,19 @@
+.light-theme {
+  --bg: #ffffff;
+  --p: black;
+  --hr: black;
+  --h: black;
+  --th: #343434;
+  --td: black;
+  --strong: black;
+}
+
+.dark-theme {
+  --bg: #343434;
+  --p: #adbac7;
+  --hr: #adbac7;
+  --h: white;
+  --th: white;
+  --td: #adbac7;
+  --strong: #adbac7;
+}

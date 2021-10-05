@@ -1,7 +1,8 @@
 <div class="page-container">
   <div class="col-lg-11 ml-lg-5 ml-sm-2 mt-3">
     <p>
-      <strong>Delete</strong> products as you please :) For demonstration
+      <span style="color: rgb(20, 170, 20)">Note:</span>
+      <strong> Delete</strong> products as you please :) For demonstration
       purposes, the database <strong>will not</strong> be effected
     </p>
     <p style="color: tomato">{{ errorMsg }}</p>
@@ -11,7 +12,11 @@
     <div class="table-section">
       <!-- Remove Alert -->
 
-      <table style="width: 99%">
+      <div *ngIf="allProducts.length === 0" class="mx-auto text-center">
+        <h6>No Product to display...</h6>
+      </div>
+
+      <table *ngIf="allProducts.length !== 0" style="width: 99%">
         <!-- Columns -->
         <tr>
           <th *ngIf="errorMsg == ''">#</th>

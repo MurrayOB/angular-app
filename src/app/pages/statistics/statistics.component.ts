@@ -40,6 +40,17 @@ export class StatisticsComponent implements OnInit {
     },
   ];
 
+  lineColors = [
+    {
+      backgroundColor: [
+        "rgba(134, 174, 247, 0.8)",
+        "rgba(101, 214, 105, 0.8)",
+        "rgba(240, 112, 103, 0.8)",
+        "rgba(255, 174, 74, 0.6)",
+      ],
+    },
+  ];
+
   allProducts: any = [
     { id: 1, name: "Example", category: "Food", quantity: 100 },
     { id: 34, name: "Another Example", category: "Clothes", quantity: 90 },

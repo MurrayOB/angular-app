@@ -1,10 +1,13 @@
-.home-banner{
-    height: 400px;
-    background-color: rgb(242, 249, 250);
-    border-radius: 4px;
+.home-banner {
+  height: 400px;
+  background-color: rgb(242, 249, 250);
+  border-radius: 4px;
 }
 
-.info-banner{
-    min-height: 390px;
+.info-banner {
+  min-height: 390px;
 }
 
+.wh-image {
+  max-height: 390px;
+}

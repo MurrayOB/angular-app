@@ -1,0 +1,13 @@
+.footer-p {
+  color: var(--h) !important;
+}
+
+@media screen and (max-width: 500px) {
+  h5 {
+    font-size: 80% !important;
+  }
+
+  p {
+    font-size: 80% !important;
+  }
+}
