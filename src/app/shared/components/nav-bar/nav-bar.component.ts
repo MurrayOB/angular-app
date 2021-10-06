@@ -21,6 +21,8 @@ export class NavBarComponent implements OnInit {
   light = "light-theme";
   theme = "light-theme";
 
+  showSidebar = false;
+
   loggedIn = false;
   role = "";
   name = "";
@@ -51,6 +53,11 @@ export class NavBarComponent implements OnInit {
       this.role = user.role || localStorage.getItem("role");
       this.name = user.name || localStorage.getItem("name");
     });
+  }
+
+  toggleSidebar() {
+    this.stateService.setLayout(false);
+    localStorage.setItem("nav", "false");
   }
 
   toggleTheme() {

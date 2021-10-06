@@ -13,3 +13,15 @@
 .links {
   color: var(--p);
 }
+
+.a {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.open .navbar {
+  left: 0 !important;
+  width: 20%;
+  height: 100%;
+}

@@ -6,6 +6,7 @@
   --th: #343434;
   --td: black;
   --strong: black;
+  --sidebar: black;
 }
 
 .dark-theme {
@@ -16,4 +17,5 @@
   --th: white;
   --td: #adbac7;
   --strong: #adbac7;
+  --sidebar: #2b2b2b;
 }

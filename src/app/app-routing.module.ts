@@ -19,6 +19,8 @@ import { RegisterPageComponent } from "./pages/register-page/register-page.compo
 import { StatisticsComponent } from "./pages/statistics/statistics.component";
 //About Page
 import { AboutPageComponent } from "./pages/about-page/about-page.component";
+//User Profile Page
+import { UserProfilePageComponent } from "./pages/user-profile-page/user-profile-page.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -44,6 +46,11 @@ const routes: Routes = [
   {
     path: "statistics-page",
     component: StatisticsComponent,
+    canActivate: [AuthGuardGuard],
+  },
+  {
+    path: "user-profile-page",
+    component: UserProfilePageComponent,
     canActivate: [AuthGuardGuard],
   },
 ];

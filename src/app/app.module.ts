@@ -1,33 +1,34 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { DatePipe } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { DatePipe } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 //Pages
-import { HomeComponent } from './pages/home-page/home.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RegisterPageComponent } from './pages/register-page/register-page.component';
-import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { EditProductsPageComponent } from './pages/products-page/edit-products-page.component';
-import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { HomeComponent } from "./pages/home-page/home.component";
+import { LoginPageComponent } from "./pages/login-page/login-page.component";
+import { RegisterPageComponent } from "./pages/register-page/register-page.component";
+import { DashboardPageComponent } from "./pages/dashboard-page/dashboard-page.component";
+import { ProfilePageComponent } from "./pages/profile-page/profile-page.component";
+import { EditProductsPageComponent } from "./pages/products-page/edit-products-page.component";
+import { StatisticsComponent } from "./pages/statistics/statistics.component";
 //Components
-import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
+import { NavBarComponent } from "./shared/components/nav-bar/nav-bar.component";
+import { FooterComponent } from "./shared/components/footer/footer.component";
 //Guard
-import { AuthGuardGuard } from './core/guards/auth-guard.guard';
+import { AuthGuardGuard } from "./core/guards/auth-guard.guard";
 //Services
-import { StateService } from './core/services/state.service'; 
+import { StateService } from "./core/services/state.service";
 //Chart
-import { ChartsModule } from 'ng2-charts';
+import { ChartsModule } from "ng2-charts";
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { AboutPageComponent } from './pages/about-page/about-page.component';
-
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { AboutPageComponent } from "./pages/about-page/about-page.component";
+import { UserProfilePageComponent } from "./pages/user-profile-page/user-profile-page.component";
+import { SidebarComponent } from "./shared/components/sidebar/sidebar.component";
 
 @NgModule({
   declarations: [
@@ -42,17 +43,19 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
     EditProductsPageComponent,
     StatisticsComponent,
     AboutPageComponent,
+    UserProfilePageComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule, 
-    HttpClientModule, 
-    ChartsModule, 
-    NgbModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
+    ChartsModule,
+    NgbModule,
   ],
   providers: [DatePipe, AuthGuardGuard, StateService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

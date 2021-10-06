@@ -1,3 +1,19 @@
-<app-nav-bar></app-nav-bar>
-<router-outlet #routerOutlet="outlet"></router-outlet>
-<app-footer></app-footer>
+<div *ngIf="navbar">
+  <app-nav-bar></app-nav-bar>
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="!navbar">
+  <div class="content">
+    <div class="parent">
+      <div class="sidebar">
+        <h1>Hello</h1>
+      </div>
+    </div>
+    <div class="subContent">
+      <router-outlet #routerOutlet="outlet"></router-outlet>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

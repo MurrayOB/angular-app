@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { StateService } from "./core/services/state.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
-export class AppComponent {
-  title = 'warehouse2';
+export class AppComponent implements OnInit {
+  constructor(private stateService: StateService) {}
+
+  navbar: boolean = true;
+
+  ngOnInit(): void {
+    this.stateService.navbar$.subscribe((nav: boolean) => {
+      this.navbar = nav;
+    });
+  }
 }
