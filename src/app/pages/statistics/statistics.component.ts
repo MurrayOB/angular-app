@@ -51,6 +51,8 @@ export class StatisticsComponent implements OnInit {
     },
   ];
 
+  total: any = 0;
+
   allProducts: any = [
     { id: 1, name: "Example", category: "Food", quantity: 100 },
     { id: 34, name: "Another Example", category: "Clothes", quantity: 90 },
@@ -82,6 +84,12 @@ export class StatisticsComponent implements OnInit {
 
       this.getQuantities(this.allProducts);
     }
+
+    this.getTotal();
+  }
+
+  getTotal() {
+    this.total = this.quantity.reduce((a: any, b: any) => a + b);
   }
 
   //Get Quantities of Categories for Charts onInit

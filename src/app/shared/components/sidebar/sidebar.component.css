@@ -5,3 +5,16 @@
   position: absolute;
   box-shadow: 10px 0 5px -2px rgb(44, 44, 44);
 }
+
+.sidebar a {
+  color: var(--p);
+  font-size: large;
+}
+
+.sidebar a:hover {
+  color: var(--h);
+}
+
+.mainLink {
+  font-size: 24px !important;
+}
