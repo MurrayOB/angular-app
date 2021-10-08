@@ -9,9 +9,22 @@
     <div class="parent">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="subContent">
+    <div class="subContent mx-auto">
       <router-outlet #routerOutlet="outlet"></router-outlet>
       <!-- <app-footer></app-footer> -->
+      <div class="col-11 mx-auto">
+        <hr />
+        <br />
+        <div class="text-right">
+          <p>
+            &#169;2021 | Designed & Built by
+            <a class="authorLink" href="https://murrayobrien.github.io/"
+              >Murray O'Brien</a
+            >
+          </p>
+        </div>
+        <br />
+      </div>
     </div>
   </div>
 </div>

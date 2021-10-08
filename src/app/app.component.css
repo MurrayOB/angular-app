@@ -16,3 +16,8 @@
   overflow-y: scroll;
   overflow-x: hidden !important;
 }
+
+.authorLink {
+  color: var(--p);
+  text-decoration: underline;
+}
