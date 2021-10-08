@@ -1,5 +1,6 @@
 <nav
   *ngIf="!showSidebar"
+  [@fadeInOut-1]
   class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
 >
   <a class="navbar-brand links" href="#">App <i class="uil uil-browser"></i></a>
@@ -165,34 +166,42 @@
       Light Mode <i class="uil uil-sun"></i>
     </a>
     <br />
-    <a routerLink="/user-profile-page" class="btn my-2 my-sm-0 mr-2"
-      >{{ name }} <i class="uil uil-user"></i
-    ></a>
-    <br />
-    <hr />
-    <a routerLink="/edit-products-page" class="btn my-2 my-sm-0 mr-2 links"
-      >Add Product <i class="uil uil-plus"></i
-    ></a>
-    <a routerLink="/profile-page" class="btn my-2 my-sm-0 mr-2 links"
-      >Edit {{ role }} Profile <i class="uil uil-setting"></i
-    ></a>
-    <div class="mt-3 ml-2">
-      <a (click)="logOut()" class="btn btn-primary my-2 my-sm-0 mr-2"
-        >Logout <i class="uil uil-signout"></i
+
+    <div *ngIf="loggedIn">
+      <a routerLink="/user-profile-page" class="btn my-2 my-sm-0 mr-2"
+        >{{ name }} <i class="uil uil-user"></i
       ></a>
+      <br />
+      <hr />
+      <a routerLink="/edit-products-page" class="btn my-2 my-sm-0 mr-2 links"
+        >Add Product <i class="uil uil-plus"></i
+      ></a>
+      <a routerLink="/profile-page" class="btn my-2 my-sm-0 mr-2 links"
+        >Edit {{ role }} Profile <i class="uil uil-setting"></i
+      ></a>
+      <div class="mt-3 ml-2">
+        <a (click)="logOut()" class="btn btn-primary my-2 my-sm-0 mr-2 noshade"
+          >Logout <i class="uil uil-signout"></i
+        ></a>
+      </div>
     </div>
-    <div *ngIf="!loggedIn">
-      <a
-        routerLink="/login-page"
-        class="btn btn-outline-primary my-2 my-sm-0 mr-2"
-        >Login</a
-      >
+
+    <div *ngIf="!loggedIn" class="ml-2">
+      <hr />
       <a
         routerLink="/register-page"
         routerLinkActive="active"
-        class="btn btn-outline-danger my-2 my-sm-0"
+        class="btn btn-danger my-2 my-sm-0 pt-2 noshade"
         >Register</a
       >
+      <br />
+      <div class="mt-2">
+        <a
+          routerLink="/login-page"
+          class="btn btn-primary my-2 my-sm-0 mr-2 noshade"
+          >Login</a
+        >
+      </div>
     </div>
   </div>
 </div>

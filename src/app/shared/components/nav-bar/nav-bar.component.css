@@ -21,13 +21,12 @@
 }
 
 /* SideBar */
-
 .sidebar {
   height: 100%;
   width: 20%;
   background-color: var(--sidebar);
   position: absolute;
-  box-shadow: 10px 0 5px -2px rgb(44, 44, 44);
+  box-shadow: var(--sidebar-shadow);
 }
 
 .sidebar a {
@@ -36,9 +35,13 @@
 }
 
 .sidebar a:hover {
-  color: var(--h);
+  color: var(--shade-accent);
 }
 
 .mainLink {
   font-size: 24px !important;
+}
+
+.noshade:hover {
+  color: initial !important;
 }

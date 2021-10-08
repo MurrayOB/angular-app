@@ -1,13 +1,30 @@
+import { animate, style, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ApiService } from "src/app/core/services/api.service";
 import { StateService } from "src/app/core/services/state.service";
 import { User } from "src/app/models/user";
 
+export const fadeInOut = (name = "fadeInOut", duration = 0.1) =>
+  trigger(name, [
+    transition(":enter", [
+      style({ opacity: 0 }),
+      animate(`${duration}s ease-in-out`),
+    ]),
+    transition(":leave", [
+      animate(`${duration}s ease-in-out`, style({ opacity: 0 })),
+    ]),
+  ]);
+
 @Component({
   selector: "app-nav-bar",
   templateUrl: "./nav-bar.component.html",
   styleUrls: ["./nav-bar.component.css"],
+  animations: [
+    fadeInOut("fadeInOut-1", 0.3),
+    fadeInOut("fadeInOut-2", 0.7),
+    fadeInOut("fadeInOut-3", 1),
+  ],
 })
 export class NavBarComponent implements OnInit {
   constructor(
@@ -56,9 +73,16 @@ export class NavBarComponent implements OnInit {
   }
 
   toggleSidebar() {
-    this.stateService.setLayout(false);
-    localStorage.setItem("nav", "false");
-    this.showSidebar = true;
+    if (this.showSidebar == false) {
+      this.stateService.setLayout(false);
+      localStorage.setItem("nav", "false");
+      this.showSidebar = true;
+      return;
+    }
+
+    this.stateService.setLayout(true);
+    localStorage.setItem("nav", "true");
+    this.showSidebar = false;
   }
 
   toggleTheme() {
