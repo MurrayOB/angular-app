@@ -58,6 +58,7 @@ export class NavBarComponent implements OnInit {
   toggleSidebar() {
     this.stateService.setLayout(false);
     localStorage.setItem("nav", "false");
+    this.showSidebar = true;
   }
 
   toggleTheme() {

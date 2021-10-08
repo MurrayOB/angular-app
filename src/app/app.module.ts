@@ -28,7 +28,7 @@ import { ChartsModule } from "ng2-charts";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AboutPageComponent } from "./pages/about-page/about-page.component";
 import { UserProfilePageComponent } from "./pages/user-profile-page/user-profile-page.component";
-import { SidebarComponent } from "./shared/components/sidebar/sidebar.component";
+import { SidebarFooterComponent } from "./shared/components/sidebar-footer/sidebar-footer.component";
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { SidebarComponent } from "./shared/components/sidebar/sidebar.component"
     StatisticsComponent,
     AboutPageComponent,
     UserProfilePageComponent,
-    SidebarComponent,
+    SidebarFooterComponent,
   ],
   imports: [
     BrowserModule,

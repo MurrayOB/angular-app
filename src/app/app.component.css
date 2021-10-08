@@ -1,11 +1,11 @@
-.content {
+.parent {
   display: flex;
   flex-direction: row;
   max-height: 100vh;
   overflow-x: hidden !important;
 }
 
-.parent {
+.content {
   width: 20%;
   height: 100%;
 }
@@ -15,9 +15,4 @@
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden !important;
-}
-
-.authorLink {
-  color: var(--p);
-  text-decoration: underline;
 }

@@ -1,30 +1,10 @@
-<div *ngIf="navbar">
-  <app-nav-bar></app-nav-bar>
-  <router-outlet #routerOutlet="outlet"></router-outlet>
-  <app-footer></app-footer>
-</div>
-
-<div *ngIf="!navbar">
-  <div class="content">
-    <div class="parent">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="subContent mx-auto">
-      <router-outlet #routerOutlet="outlet"></router-outlet>
-      <!-- <app-footer></app-footer> -->
-      <div class="col-11 mx-auto">
-        <hr />
-        <br />
-        <div class="text-right">
-          <p>
-            &#169;2021 | Designed & Built by
-            <a class="authorLink" href="https://murrayobrien.github.io/"
-              >Murray O'Brien</a
-            >
-          </p>
-        </div>
-        <br />
-      </div>
-    </div>
+<div [ngClass]="{ parent: !navbar }">
+  <div [ngClass]="{ content: !navbar }">
+    <app-nav-bar></app-nav-bar>
   </div>
+  <div [ngClass]="{ subContent: !navbar }">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+    <app-sidebar-footer *ngIf="!navbar"></app-sidebar-footer>
+  </div>
+  <app-footer *ngIf="navbar"></app-footer>
 </div>
