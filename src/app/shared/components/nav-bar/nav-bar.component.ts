@@ -5,14 +5,22 @@ import { ApiService } from "src/app/core/services/api.service";
 import { StateService } from "src/app/core/services/state.service";
 import { User } from "src/app/models/user";
 
-export const fadeInOut = (name = "fadeInOut", duration = 0.1) =>
+export const moveIn = (name = "fadeInOut", duration = 0.1) =>
   trigger(name, [
     transition(":enter", [
-      style({ opacity: 0 }),
+      style({ height: 0 }),
+      animate(`${duration}s ease-in-out`),
+    ]),
+  ]);
+
+export const moveInOut = (name = "moveInOut", duration = 0.1) =>
+  trigger(name, [
+    transition(":enter", [
+      style({ width: 0 }),
       animate(`${duration}s ease-in-out`),
     ]),
     transition(":leave", [
-      animate(`${duration}s ease-in-out`, style({ opacity: 0 })),
+      animate(`${duration}s ease-in-out`, style({ width: 0 })),
     ]),
   ]);
 
@@ -20,11 +28,7 @@ export const fadeInOut = (name = "fadeInOut", duration = 0.1) =>
   selector: "app-nav-bar",
   templateUrl: "./nav-bar.component.html",
   styleUrls: ["./nav-bar.component.css"],
-  animations: [
-    fadeInOut("fadeInOut-1", 0.3),
-    fadeInOut("fadeInOut-2", 0.7),
-    fadeInOut("fadeInOut-3", 1),
-  ],
+  animations: [moveIn("fadeInOut-1", 0.4), moveInOut("moveInOut", 0.3)],
 })
 export class NavBarComponent implements OnInit {
   constructor(
@@ -72,7 +76,7 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  toggleSidebar() {
+  toggleSidebar = async () => {
     if (this.showSidebar == false) {
       this.stateService.setLayout(false);
       localStorage.setItem("nav", "false");
@@ -83,7 +87,7 @@ export class NavBarComponent implements OnInit {
     this.stateService.setLayout(true);
     localStorage.setItem("nav", "true");
     this.showSidebar = false;
-  }
+  };
 
   toggleTheme() {
     const theme = document.documentElement.className;
@@ -100,10 +104,7 @@ export class NavBarComponent implements OnInit {
   }
 
   logOut() {
-    //Set Logged In To False
     this.loggedIn = false;
-
-    //Post And Return Server Response
     this.apiService.post(this.user, this.url).subscribe(
       (res) => {
         console.log(res);
@@ -112,9 +113,7 @@ export class NavBarComponent implements OnInit {
         console.error(err);
       }
     );
-
     localStorage.clear();
-
     this.router.navigate(["/login-page"]);
   }
 }

@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { StateService } from "./core/services/state.service";
 

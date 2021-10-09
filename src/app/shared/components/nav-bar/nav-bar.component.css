@@ -20,6 +20,12 @@
   appearance: none;
 }
 
+@media screen and (max-width: 1000px) {
+  .sidebarBtn {
+    display: none;
+  }
+}
+
 /* SideBar */
 .sidebar {
   height: 100%;
@@ -27,6 +33,9 @@
   background-color: var(--sidebar);
   position: absolute;
   box-shadow: var(--sidebar-shadow);
+  overflow-x: hidden;
+  white-space: nowrap;
+  z-index: 9;
 }
 
 .sidebar a {

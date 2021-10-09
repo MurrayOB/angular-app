@@ -7,6 +7,8 @@ import { DatePipe } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 //Pages
 import { HomeComponent } from "./pages/home-page/home.component";
 import { LoginPageComponent } from "./pages/login-page/login-page.component";
@@ -48,6 +50,7 @@ import { SidebarFooterComponent } from "./shared/components/sidebar-footer/sideb
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
