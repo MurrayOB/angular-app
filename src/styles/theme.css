@@ -20,6 +20,6 @@
   --td: #adbac7;
   --strong: #adbac7;
   --sidebar: #2b2b2b;
-  --sidebar-shadow: 10px 0 5px -2px rgb(44, 44, 44);
+  --sidebar-shadow: none;
   --shade-accent: white;
 }
